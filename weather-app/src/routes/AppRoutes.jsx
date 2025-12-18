@@ -7,6 +7,8 @@ import { useAuth } from '../hooks/useAuth';
 import { Login } from '../components/auth/Login';
 import { Signup } from '../components/auth/Signup';
 import { Home } from '../pages/Home';
+import { Weather } from '../pages/Weather';
+import { WeatherForecast } from '../pages/WeatherForecast';
 import { Layout } from '../components/layout/Layout';
 import { ProtectedRoute } from './ProtectedRoute';
 
@@ -32,6 +34,26 @@ export const AppRoutes = () => {
           <ProtectedRoute>
             <Layout>
               <Home />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/weather"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Weather />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/weather/forecast/:lat/:lon"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <WeatherForecast />
             </Layout>
           </ProtectedRoute>
         }
