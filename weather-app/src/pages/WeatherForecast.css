@@ -1,0 +1,189 @@
+.forecast-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.forecast-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.forecast-back-btn {
+  align-self: flex-start;
+}
+
+.forecast-header-content {
+  text-align: center;
+}
+
+.forecast-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.forecast-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Lista de pronóstico - Horizontal */
+.forecast-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+/* Scrollbar personalizada */
+.forecast-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecast-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.forecast-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.forecast-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Footer */
+.forecast-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.forecast-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Estado de error */
+.forecast-error {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.forecast-error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.forecast-error-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.forecast-error-message {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+}
+
+.forecast-error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Estado vacío */
+.forecast-empty {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.forecast-empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.forecast-empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.forecast-empty-message {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .forecast-header {
+    margin-bottom: 2rem;
+  }
+
+  .forecast-title {
+    font-size: 2rem;
+  }
+
+  .forecast-subtitle {
+    font-size: 1rem;
+  }
+
+  .forecast-list {
+    gap: 0.75rem;
+  }
+
+  .forecast-error,
+  .forecast-empty {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-title {
+    font-size: 1.75rem;
+  }
+
+  .forecast-list {
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+  }
+
+  .forecast-error-icon,
+  .forecast-empty-icon {
+    font-size: 3rem;
+  }
+
+  .forecast-error-title,
+  .forecast-empty-title {
+    font-size: 1.25rem;
+  }
+
+  .forecast-error-actions {
+    flex-direction: column;
+  }
+
+  .forecast-error-actions button {
+    width: 100%;
+  }
+}
+
