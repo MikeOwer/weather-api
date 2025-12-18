@@ -127,6 +127,7 @@ class OpenWeatherService
       req.params["lon"] = lon
       req.params["appid"] = @api_key
       req.params["units"] = "metric"
+      req.params["lang"] = "es"
     end
   end
 
