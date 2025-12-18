@@ -284,11 +284,6 @@ Las rutas protegidas verifican:
 - `<Button />` - Botón con estados (loading, disabled)
 - `<Loading />` - Spinner de carga
 
-## 📚 Documentación Adicional
-
-Para más detalles sobre las decisiones de arquitectura y cómo escalar la aplicación, consulta:
-
-📖 **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Documentación técnica completa
 
 ## 🧪 Scripts Disponibles
 

@@ -58,10 +58,8 @@ rails server
 - `DELETE /users/:id` - Eliminar usuario
 
 ### Weather (Requiere JWT)
-- `GET /weather/forecast?lat={lat}&lon={lon}` - Pronóstico del tiempo
-- `GET /weather/:id?lat={lat}&lon={lon}` - Temperatura de ciudad específica
-- `POST /weather` - Temperatura actual de todas las ciudades
-- `POST /weather/days` - Pronóstico de 5 días (body: lat, lon)
+- `GET /weather/current` - Temperatura actual de todas las ciudades
+- `GET /weather/days` - Pronóstico de 5 días (body: lat, lon)
 
 ### Cities (Requiere JWT)
 - `GET /cities` - Listar ciudades disponibles
@@ -78,7 +76,6 @@ app/
 │   ├── auth_controller.rb               # Autenticación
 │   ├── users_controller.rb              # CRUD usuarios
 │   ├── weather_controller.rb            # Pronóstico del tiempo
-│   ├── cities_controller.rb             # Consulta de ciudades
 │   └── concerns/authenticable.rb        # JWT concern
 ├── models/
 │   └── user.rb                          # Modelo User
@@ -107,25 +104,17 @@ curl -X POST http://localhost:3000/auth/login \
 curl -X GET http://localhost:3000/users \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
-# Obtener pronóstico del tiempo (con token)
-curl -X GET "http://localhost:3000/weather/forecast?lat=40.7128&lon=-74.0060" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-
 # Listar ciudades (con token)
 curl -X GET http://localhost:3000/cities \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 # Temperatura actual de todas las ciudades (con token)
-curl -X POST http://localhost:3000/weather \
+curl -X GET http://localhost:3000/weather/current \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 # Pronóstico de 5 días (con token)
-curl -X POST http://localhost:3000/weather/days \
+curl -X GET http://localhost:3000/weather/days \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"lat": 40.7128, "lon": -74.0060}'
-
-# Temperatura de ciudad específica por coordenadas (con token)
-curl -X GET "http://localhost:3000/weather/city?lat=20.6737&lon=-103.344" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
